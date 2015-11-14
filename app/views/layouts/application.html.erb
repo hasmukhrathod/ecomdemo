@@ -24,8 +24,9 @@
 
 		<div id="left_navigation" style="float:left;">
 			<% if session[:user_id] %>
-			
-			<p class="link"> <%= link_to 'Home', :controller => 'admin', :action => 'index' %> </p> <br>			
+
+			<p class="link"> <%= link_to 'Home', :controller => 'admin', :action => 'index' %> </p> <br>
+			<p class="link"> <%= link_to 'Add User Type', roles_path %> </p> <br>			
 			<p class="link"> <%= link_to 'Sellers', users_path %> </p> <br>
 			<p class="link"> <%= link_to 'Logout', logout_path, method: :delete %> </p> <br>
 			<% end %>	
