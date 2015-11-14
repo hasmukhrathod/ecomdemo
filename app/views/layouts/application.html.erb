@@ -8,7 +8,36 @@
 </head>
 <body>
 
-<%= yield %>
+
+<div id="container" style="width: 100%;overflow:auto;">
+
+		<div id="left" style="float:left;">
+			<%= image_tag('centos_logo.png',width: '300', height: '150') %>
+		</div>
+
+		<div id="right" style="float:right;">
+			<p class="title_name"> Ecommerce Demo </p>	
+		</div>
+</div>
+
+<div id="content" style="width: 100%;overflow:auto;">
+
+		<div id="left_navigation" style="float:left;">
+			<% if session[:user_id] %>
+			
+			<p class="link"> <%= link_to 'Home', :controller => 'admin', :action => 'index' %> </p> <br>			
+			<p class="link"> <%= link_to 'Sellers', users_path %> </p> <br>
+			<p class="link"> <%= link_to 'Logout', logout_path, method: :delete %> </p> <br>
+			<% end %>	
+ 			</div>
+
+		<div id="right" style="float:right;">
+				<%= yield %>			
+		</div>
+</div>
+
+
+
 
 </body>
 </html>
